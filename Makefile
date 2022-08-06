@@ -5,9 +5,41 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/20 17:49:05 by yeongo            #+#    #+#              #
-#    Updated: 2022/07/20 17:49:07 by yeongo           ###   ########.fr        #
+#    Created: 2022/07/07 17:00:59 by yeongo            #+#    #+#              #
+#    Updated: 2022/08/06 09:08:35 by yeongo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC		:=	cc
+CFLAGS	:=	-Wall -Wextra -Werror
 
+AR		:=	ar
+ARFLAGS	:=	rcus
+
+NAME	:=	libftprintf.a
+
+SRCS	:=	ft_printf.c		\
+			print_text.c	\
+			print_number.c
+
+OBJS	:=	$(SRCS:.c=.o)
+
+%.o		:	%.c
+	$(CC) $(CFLAGS) -o $@ -c $^
+
+$(NAME)	:	$(OBJS)
+	$(AR) $(ARFLAGS) $@ $^
+
+all		:	$(NAME)
+
+clean	:
+	rm -rf $(OBJS)
+
+fclean	:	clean
+	rm -rf $(NAME)
+
+re		:
+	@make fclean
+	@make all
+
+.PHONY	:	all clean fclean re

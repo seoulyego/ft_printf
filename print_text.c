@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   print_text.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 12:04:51 by yeongo            #+#    #+#             */
-/*   Updated: 2022/07/07 14:14:03 by yeongo           ###   ########.fr       */
+/*   Created: 2022/08/05 22:32:04 by yeongo            #+#    #+#             */
+/*   Updated: 2022/08/06 09:07:17 by yeongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+static size_t	ft_strlen(const char *str)
 {
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
+	size_t	length;
+
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
+}
+
+int	ft_putchar(char c, int *result)
+{
+	*result += 1;
+	return (write(1, &c, 1));
+}
+
+int	ft_putstr(char *str, int *result)
+{
+	if (str == NULL)
 	{
-		*lst = new;
-		return ;
+		*result += 6;
+		return (write(1, "(null)", 6));
 	}
-	new->next = *lst;
-	*lst = new;
+	*result += ft_strlen(str);
+	return (write(1, str, ft_strlen(str)));
 }
