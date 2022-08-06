@@ -6,7 +6,7 @@
 /*   By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 09:12:05 by yeongo            #+#    #+#             */
-/*   Updated: 2022/08/06 09:07:12 by yeongo           ###   ########.fr       */
+/*   Updated: 2022/08/06 12:44:50 by yeongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # define BASE_10 "0123456789"
 # define BASE_16_LOWER "0123456789abcdef"
 # define BASE_16_UPPER "0123456789ABCDEF"
+
+# define ERROR -1
+# define END_OF_STR -2
 
 int	ft_putchar(char c, int *result);
 int	ft_putstr(char *str, int *result);
