@@ -6,7 +6,7 @@
 #    By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/07 17:00:59 by yeongo            #+#    #+#              #
-#    Updated: 2022/08/06 09:08:35 by yeongo           ###   ########.fr        #
+#    Updated: 2022/08/06 17:35:37 by yeongo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,19 +24,19 @@ SRCS	:=	ft_printf.c		\
 
 OBJS	:=	$(SRCS:.c=.o)
 
+all		:	$(NAME)
+
 %.o		:	%.c
 	$(CC) $(CFLAGS) -o $@ -c $^
 
 $(NAME)	:	$(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-all		:	$(NAME)
-
 clean	:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean	:	clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re		:
 	@make fclean
