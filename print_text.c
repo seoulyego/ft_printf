@@ -6,7 +6,7 @@
 /*   By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 22:32:04 by yeongo            #+#    #+#             */
-/*   Updated: 2022/08/06 12:46:12 by yeongo           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:14:25 by yeongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static size_t	ft_strlen(const char *str)
 	return (length);
 }
 
-int	ft_putchar(char c, int *result)
+int	ft_putchar_count(char c, int *result)
 {
 	*result += 1;
 	return (write(1, &c, 1));
 }
 
-int	ft_putstr(char *str, int *result)
+int	ft_putstr_count(char *str, int *result)
 {
 	if (str == NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: yeongo <yeongo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 09:12:05 by yeongo            #+#    #+#             */
-/*   Updated: 2022/08/06 12:44:50 by yeongo           ###   ########.fr       */
+/*   Updated: 2022/09/27 16:13:20 by yeongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # define ERROR -1
 # define END_OF_STR -2
 
-int	ft_putchar(char c, int *result);
-int	ft_putstr(char *str, int *result);
-int	ft_putnbr(int n, int *result);
-int	ft_putnbr_base(unsigned int n, int base, char flag, int *result);
-int	ft_print_memory(unsigned long long addr, int *result);
+int	ft_putchar_count(char c, int *result);
+int	ft_putstr_count(char *str, int *result);
+int	ft_putnbr_count(int n, int *result);
+int	ft_putnbr_base_count(unsigned int n, int base, char flag, int *result);
+int	ft_print_memory_count(unsigned long long addr, int *result);
 int	ft_printf(const char *format, ...);
 
 #endif 
